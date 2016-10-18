@@ -15,7 +15,7 @@
         "./floppy/WindowsPowershell.lnk",
         "./floppy/PinTo10.exe",
         "./scripts/disable-winrm.ps1",
-        "./scripts/docker/enable-winrm.ps1",
+        "./scripts/enable-winrm.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1"
       ],
@@ -53,7 +53,7 @@
         "./floppy/WindowsPowershell.lnk",
         "./floppy/PinTo10.exe",
         "./scripts/disable-winrm.ps1",
-        "./scripts/docker/enable-winrm.ps1",
+        "./scripts/enable-winrm.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1"
       ],
@@ -62,8 +62,7 @@
         "RemoteDisplay.vnc.port": "5900",
         "memsize": "2048",
         "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068",
-        "vhv.enable": "TRUE"
+        "scsi0.virtualDev": "lsisas1068"
       }
     },
     {
@@ -87,7 +86,7 @@
         "./floppy/WindowsPowershell.lnk",
         "./floppy/PinTo10.exe",
         "./scripts/disable-winrm.ps1",
-        "./scripts/docker/enable-winrm.ps1",
+        "./scripts/enable-winrm.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/oracle-cert.cer"
@@ -118,6 +117,13 @@
       ]
     },
     {
+      "type": "powershell",
+      "scripts": [
+        "./scripts/docker/install-docker.ps1",
+        "./scripts/docker/add-docker-group.ps1"
+      ]
+    },
+    {
       "type": "windows-restart"
     },
     {
@@ -131,8 +137,7 @@
     {
       "type": "powershell",
       "scripts": [
-        "./scripts/docker/add-docker-group.ps1",
-        "./scripts/docker/install-docker.ps1",
+        "./scripts/docker/docker-pull-baseimages.ps1",
         "./scripts/docker/open-docker-insecure-port.ps1",
         "./scripts/docker/remove-docker-key-json.ps1",
         "./scripts/docker/disable-windows-defender.ps1"
